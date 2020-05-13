@@ -1,5 +1,3 @@
-// Bioio API v7 © 2019 ITCorp (it.ru)
-//
 // App Core functions and vars
 package core
 

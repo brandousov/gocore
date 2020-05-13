@@ -1,5 +1,3 @@
-// Bioio API v7 © 2020 ITCorp (it.ru)
-//
 // App Core functions and vars | Compression functions
 package core
 

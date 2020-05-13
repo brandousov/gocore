@@ -1,5 +1,3 @@
-// Bioio API v7 © 2019 ITCorp (it.ru)
-//
 // App Core functions and vars | Core functions
 // @help: in_array: https://github.com/SimonWaldherr/golang-examples/blob/master/advanced/in_array.go
 package core
@@ -16,7 +14,6 @@ import (
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// |helpers|
 // Вывод значения в консоль во внутреннем формате Go
-// @help: https://golang.org/pkg/fmt/#Printf
 func Cl(v ...interface{}) {
 	fmt.Printf("%#v\n", v)
 }

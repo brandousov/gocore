@@ -1,5 +1,3 @@
-// Bioio API v7 © 2020 ITCorp (it.ru)
-//
 // Application encryption functions
 // @help: GOST https://github.com/martinlindhe/gogost/tree/master/gost3412
 package core

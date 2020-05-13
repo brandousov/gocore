@@ -1,5 +1,3 @@
-// Bioio API v7 © 2019 ITCorp (it.ru)
-//
 // App Core functions and vars | Math
 // @help:
 // fmt.Printf("LeadingZeros64(%064b) = %d\n", 1, bits.LeadingZeros64(1))
