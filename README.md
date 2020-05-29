@@ -1,2 +1,3 @@
 # gocore
-Go utils
+Go core utils
+Last Version: v1.2.0

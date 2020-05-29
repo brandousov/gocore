@@ -7,6 +7,10 @@ import (
 	"sync"
 )
 
+
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// |logger|
 // Logger struct
 type Logger struct {
@@ -20,6 +24,10 @@ type Logger struct {
 	Ymd  string     // Текущая метка ГГГГДДММ (обновляется ежесекундно)
 	//StopRotate	chan bool																								// Канал для сигнала остановки горутины с ротацией лога
 }
+
+
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// |methods|
 // Запись в логфайл
@@ -42,6 +50,10 @@ func (lgr *Logger) Write(log string, console bool) {
 		}
 	}
 }
+
+
+
+
 
 // Запись HTTP-запросов в лог-файл
 // Адаптировано под Hi-Load, так как частая запись на диск
@@ -76,6 +88,10 @@ func (lgr *Logger) WriteCacheToDisk() {
 	}
 }
 
+
+
+
+
 // Закрытие логера
 func (lgr *Logger) Close() {
 	// записать на диск кэш
@@ -84,10 +100,18 @@ func (lgr *Logger) Close() {
 	_ = lgr.File.Close()
 }
 
+
+
+
+
 // Запускает ротацию лога, раз в секунду запуская *Logger.Rotate()
 func (lgr *Logger) Rotate() {
 	RunEvery(1000, lgr.Check)
 }
+
+
+
+
 
 // Проверка даты и времени в именах лог-фалов (выполняется каждую 1 сек в отдельном потоке)
 // а также компрессия старых: https://www.dotnetperls.com/compress-go
@@ -122,6 +146,10 @@ func (lgr *Logger) Check() {
 		lgr.Gz()
 	}
 }
+
+
+
+
 
 // Компрессия старых лог-файлов
 func (lgr *Logger) Gz() {
@@ -164,6 +192,10 @@ func (lgr *Logger) Gz() {
 	}
 }
 
+
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// |functions|
 // Создание нового экземпляра Logger{}
 func NewLogger(name, LogDir string) *Logger {
@@ -187,6 +219,10 @@ func NewLogger(name, LogDir string) *Logger {
 	logger.Check()
 	return &logger
 }
+
+
+
+
 
 // Возвращает префикс с датой для каждой строки логфайла
 func LogDatePrefix() string {
